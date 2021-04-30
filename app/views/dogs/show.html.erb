@@ -15,7 +15,19 @@
   <%= @dog.breed %>
 </p>
 
-<%= image_tag @dog.main_image %>
+<ul>
+  <% @dog.images.each do |file| %>
+    <li>
+      <% if file.representable? %>
+        <%= image_tag(file, :size => "100x100", :crop => :fill) %>
+      <% else %>
+        <%= link_to rails_blob_path(file, disposition: "attachment") do %>
+          <%= image_tag "placeholder.png", alt: "Download file" %>
+        <% end %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
 
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
