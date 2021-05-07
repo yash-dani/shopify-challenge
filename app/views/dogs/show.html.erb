@@ -5,6 +5,9 @@
   <%= @dog.name %>
 </p>
 
+<p> Avatar btw </p>
+<%= image_tag(@dog.avatar, :size => "100x100", :crop => :fill)  %>
+
 <p>
   <strong>Age:</strong>
   <%= @dog.age %>
@@ -28,6 +31,7 @@
     </li>
   <% end %>
 </ul>
+
 
 
 <%= link_to 'Edit', edit_dog_path(@dog) %> |
