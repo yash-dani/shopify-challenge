@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -29,12 +32,6 @@
     <%= form.label :images %>
     <%= form.file_field :images, multiple: true %>
   </div>
-
-  <div class="field">
-    <%= form.label :avatar %>
-    <%= form.file_field :avatar %>
-  </div>
-
 
   <div class="actions">
     <%= form.submit %>

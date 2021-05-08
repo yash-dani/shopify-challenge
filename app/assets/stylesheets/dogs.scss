@@ -52,3 +52,34 @@
 .profile-container {
 	padding: 20px;
 }
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-row-gap: initial;
+  grid-column-gap: 20px;
+  justify-content: center;
+}
+
+.menu {
+  text-align: center;
+}
