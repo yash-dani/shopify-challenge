@@ -1,24 +1,50 @@
-# README
+# Shopify-Challenge: Pawgram
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Live Site: https://murmuring-sands-94613.herokuapp.com
 
-Things you may want to cover:
+Upload, manage, and share images of your dogs across the world! A place for dog lovers to get together and learn about each other's pets.
 
-* Ruby version
+Built using Ruby on Rails for the web app, PostgreSQL, and AWS S3.
 
-* System dependencies
+## Features
 
-* Configuration
+1. Create individual user profiles for each dog
+2. Bulk upload, and browse images
 
-* Database creation
+## Tech Stack
 
-* Database initialization
+- Ruby on Rails to create web app
+- Active Storage for image uploading to AWS S3
+- ImageMagick for image processing pipeline
+- Database: PostgreSQL
 
-* How to run the test suite
+## Installation
 
-* Services (job queues, cache servers, search engines, etc.)
+#### Requirements
 
-* Deployment instructions
+* Rails 6.0.3
+* Ruby 2.7.1
+* Yarn 1.22
+* PostgreSQL
+* ImageMagick
 
-* ...
+#### Steps:
+
+1. Update PostgreSQL credentials in ```database.yml```
+2. Update AWS credentials in ```storage.yml```
+3. Install required dependencies
+
+```
+bundle install && yarn install
+```
+
+4. Run the server
+
+```rails s```
+
+## Testing
+
+Refer to ```tests/``` subdirectory and run test cases using ```bin/rake test *TEST_FILE*```
+
+
+
