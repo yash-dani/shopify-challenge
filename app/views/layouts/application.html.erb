@@ -6,12 +6,17 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= javascript_pack_tag 'Index' %>
   </head>
 
   <body>
+    <div class="header">
+      <a href="/" class="logo">🐶 Pawstagram</a>
+      <div class="header-right">
+        <a href="">Source Code</a>
+        <a class="active" href="/dogs">Browse</a>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
