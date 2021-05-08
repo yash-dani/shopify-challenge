@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Dogs</h1>
 
-<table class="table">
+
+<!-- <table class="table">
   <thead>
     <tr>
       <th>Image</th>
@@ -15,19 +15,69 @@
   <tbody>
     <% @dogs.each do |dog| %>
       <tr>
-        <td><%= image_tag dog.avatar.variant(resize_to_limit: [50, 50]) %>
-</td>
+        <td>  <%= image_tag dog.avatar.variant(resize_to_limit: [50, 50]) %>
+
+        </td>
         <td><%= dog.name %></td>
         <td><%= dog.age %></td>
         <td><%= dog.breed %></td>
         <td><%= link_to 'Profile', dog %></td>
         <td><%= link_to 'Add/Edit Photos', edit_dog_path(dog) %></td>
-        <td><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', dog, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
       </tr>
     <% end %>
   </tbody>
-</table>
+</table> -->
+<div class="menu">
+  <h1>Browse Dogs</h1>
+  <%= link_to 'Add Dog', new_dog_path %>
+</div>
+<div class="cards">
 
+  <% @dogs.each do |dog| %>
+    <div class="card">
+      <%= image_tag dog.avatar.variant(resize_to_limit: [400, 400]) %>
+      <div class="container">
+        <h4><b><%= dog.name %></b></h4> 
+        <p><%= dog.breed %></p> 
+        <p><%= link_to 'Profile', dog %> <%= link_to 'Add Photos', edit_dog_path(dog) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
 <br>
+<style>
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 100%;
+  max-width: 400px;
+  margin: 10px;
+}
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
 
-<%= link_to 'New Dog', new_dog_path %>
+/* Add some padding inside the card container */
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  grid-row-gap: initial;
+  grid-column-gap: 20px;
+  justify-content: center;
+}
+
+.menu {
+  text-align: center;
+}
+
+
+</style>
