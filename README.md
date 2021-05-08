@@ -6,10 +6,15 @@ Upload, manage, and share images of your dogs across the world! A place for dog 
 
 Built using Ruby on Rails for the web app, PostgreSQL, and AWS S3.
 
-## Features
+## Features and Screenshots
 
 1. Create individual user profiles for each dog
-2. Bulk upload, and browse images
+![image](https://user-images.githubusercontent.com/41090933/117548449-0c23df00-b003-11eb-90eb-5a20475dc065.png)
+
+3. Bulk upload, and browse images
+![image](https://user-images.githubusercontent.com/41090933/117548289-2dd09680-b002-11eb-9a8a-c6b3f89e7d28.png)
+
+
 
 ## Tech Stack
 
