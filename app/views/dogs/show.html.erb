@@ -1,38 +1,40 @@
 <p id="notice"><%= notice %></p>
+<div class="profile-container">
+  <%= image_tag @dog.avatar.variant(resize_to_limit: [200, 200]), :class => "profile-image" %>
+  <h1><%= @dog.name %></h1>
+  <p>
+    <strong>Age:</strong>
+    <%= @dog.age %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @dog.name %>
-</p>
+  <p>
+    <strong>Breed:</strong>
+    <%= @dog.breed %>
+  </p>
 
-<p> Avatar btw </p>
-<%= image_tag(@dog.avatar, :size => "100x100", :crop => :fill)  %>
+  <%= link_to 'Edit', edit_dog_path(@dog) %> |
+  <%= link_to 'Back', dogs_path %>
+</div>
 
-<p>
-  <strong>Age:</strong>
-  <%= @dog.age %>
-</p>
 
-<p>
-  <strong>Breed:</strong>
-  <%= @dog.breed %>
-</p>
 
-<ul>
-  <% @dog.images.each do |file| %>
-    <li>
+<div class="image-container">
+  <h1>Photo Gallery</h1>
+  <br>
+  <div class="gallery">
+    <% @dog.images.each do |file| %>
       <% if file.representable? %>
-        <%= image_tag(file, :size => "100x100", :crop => :fill) %>
+        <div class="gallery-item">
+        <%= image_tag file.variant(resize_to_limit: [400, 400]), :class => "gallery-image" %>
+        </div>
       <% else %>
         <%= link_to rails_blob_path(file, disposition: "attachment") do %>
           <%= image_tag "placeholder.png", alt: "Download file" %>
         <% end %>
       <% end %>
-    </li>
-  <% end %>
-</ul>
+    <% end %>
+  </div>
+</div>
 
 
 
-<%= link_to 'Edit', edit_dog_path(@dog) %> |
-<%= link_to 'Back', dogs_path %>
